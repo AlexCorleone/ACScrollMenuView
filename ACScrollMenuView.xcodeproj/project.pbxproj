@@ -19,6 +19,8 @@
 		FA002D7520EC719B00D0077A /* ACScrollMenuCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA002D7420EC719B00D0077A /* ACScrollMenuCollectionCell.m */; };
 		FA002D7920EC780500D0077A /* UIColor+ACAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FA002D7820EC780500D0077A /* UIColor+ACAdd.m */; };
 		FA002D7C20EC981E00D0077A /* ACScrollMenuConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FA002D7B20EC981E00D0077A /* ACScrollMenuConfig.m */; };
+		FA002D7F20ECD69700D0077A /* defaultStyle.png in Resources */ = {isa = PBXBuildFile; fileRef = FA002D7E20ECD69700D0077A /* defaultStyle.png */; };
+		FA002D8120ECD69C00D0077A /* LineStyle.png in Resources */ = {isa = PBXBuildFile; fileRef = FA002D8020ECD69C00D0077A /* LineStyle.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		FA002D7820EC780500D0077A /* UIColor+ACAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ACAdd.m"; sourceTree = "<group>"; };
 		FA002D7A20EC981E00D0077A /* ACScrollMenuConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACScrollMenuConfig.h; sourceTree = "<group>"; };
 		FA002D7B20EC981E00D0077A /* ACScrollMenuConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACScrollMenuConfig.m; sourceTree = "<group>"; };
+		FA002D7E20ECD69700D0077A /* defaultStyle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultStyle.png; sourceTree = "<group>"; };
+		FA002D8020ECD69C00D0077A /* LineStyle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LineStyle.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,8 +138,18 @@
 				FA002D5A20EC687A00D0077A /* Assets.xcassets */,
 				FA002D5C20EC687A00D0077A /* LaunchScreen.storyboard */,
 				FA002D7220EC6E5A00D0077A /* ACScrollMenuPrefixHeader.h */,
+				FA002D7D20ECD67B00D0077A /* ReadMeShowPicture */,
 			);
 			path = OtherInfo;
+			sourceTree = "<group>";
+		};
+		FA002D7D20ECD67B00D0077A /* ReadMeShowPicture */ = {
+			isa = PBXGroup;
+			children = (
+				FA002D8020ECD69C00D0077A /* LineStyle.png */,
+				FA002D7E20ECD69700D0077A /* defaultStyle.png */,
+			);
+			path = ReadMeShowPicture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +211,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA002D5E20EC687A00D0077A /* LaunchScreen.storyboard in Resources */,
+				FA002D8120ECD69C00D0077A /* LineStyle.png in Resources */,
+				FA002D7F20ECD69700D0077A /* defaultStyle.png in Resources */,
 				FA002D5B20EC687A00D0077A /* Assets.xcassets in Resources */,
 				FA002D5920EC687900D0077A /* Main.storyboard in Resources */,
 			);
