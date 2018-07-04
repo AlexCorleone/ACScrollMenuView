@@ -1,6 +1,12 @@
 # ACScrollMenuView
 一个简单的滚动菜单效果、接入简单使用方便、支持多种样式、支持自定义样式；后期遇到不错的UI样式会持续更新。
 
+样式1:
+![image](https://github.com/AlexCorleone/ACScrollMenuView/blob/master/ACScrollMenuView/OtherInfo/ReadMeShowPicture/LineStyle.png)
+
+样式2:
+![image](https://github.com/AlexCorleone/ACScrollMenuView/blob/master/ACScrollMenuView/OtherInfo/ReadMeShowPicture/defaultStyle.png)
+
 使用方法如下：
 
 1.引入头文件 #import "ACScrollMenuView.h"
