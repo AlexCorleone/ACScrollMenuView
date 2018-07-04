@@ -6,13 +6,13 @@
 //  Copyright © 2018年 AlexCorleone. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "ACAppDelegate.h"
 
-@interface AppDelegate ()
+@interface ACAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation ACAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
