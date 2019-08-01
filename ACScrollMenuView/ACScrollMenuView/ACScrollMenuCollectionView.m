@@ -60,7 +60,7 @@ static NSString *scrollMenuEmptyHeaderIdentifier = @"Alex.ScrollMenuEmptyHeaderI
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 0.000001;
+    return scrollMenuConfig.itemMiddleMargin;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section

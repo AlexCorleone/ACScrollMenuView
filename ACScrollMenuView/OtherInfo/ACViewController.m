@@ -8,6 +8,7 @@
 
 #import "ACViewController.h"
 #import "ACScrollMenuView.h"
+#import "UIColor+ACAdd.h"
 
 @interface ACViewController ()
 
@@ -23,17 +24,20 @@
     self.view.backgroundColor = UIColor.lightTextColor;
     
     NSLog(@"-----before Setting : %ld", [ACScrollMenuConfig getDefaultConfig].scrollMenuStyle);
+
 //    [ACScrollMenuConfig getDefaultConfig].scrollMenuStyle = ACScrollMenuItemStyleBottomLine;
-//    scrollMenuConfig.menuTitleSelectedColor = UIColor.purpleColor;
-//    scrollMenuConfig.itemMiddleMargin = 0;
+//    scrollMenuConfig.menuTitleSelectedColor = [UIColor AC_colorWithHexString:@"#FF7D35"];
     NSLog(@"-----after Setting : %ld", [ACScrollMenuConfig getDefaultConfig].scrollMenuStyle);
 
-    scrollMenuConfig.itemInsetForSection = 7;
+//    scrollMenuConfig.itemInsetForSection = 10;
+    
+    //Item等宽显示
+//    scrollMenuConfig.itemWidth = @(([UIScreen mainScreen].bounds.size.width - [ACScrollMenuConfig getDefaultConfig].itemMiddleMargin * 5) / 4.0);
     [self.view addSubview:self.scrollMenuView];
     [_scrollMenuView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.width.equalTo(self.view);
-        make.top.equalTo(self.view).offset(20);
-        make.height.equalTo(@(30));
+        make.top.equalTo(self.view).offset(40);
+        make.height.equalTo(@(45));
     }];
     NSArray *menuTitleArray = @[@"简友圈", @"作者", @"专题", @"连载", @"文集", @"推送更新", @"全部关注"];
     NSMutableArray *itemsArray = @[].mutableCopy;

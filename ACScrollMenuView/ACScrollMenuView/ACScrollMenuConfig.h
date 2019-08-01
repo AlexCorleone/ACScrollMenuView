@@ -77,6 +77,10 @@ typedef NS_ENUM(NSUInteger, ACScrollMenuItemStyle) {
  * 底部线条的高度、 默认1.f;
  */
 @property (nonatomic, assign) CGFloat menuItemBottomLineHeight;
+/*
+ * Item 等宽度显示， 计算宽度请考虑 itemMiddleMargin 的数值
+ */
+@property (nonatomic, strong) NSNumber *itemWidth;
 
 + (ACScrollMenuConfig *)getDefaultConfig;
 

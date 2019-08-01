@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19F5205422F2C35800083D43 /* LineStyle-ItemWidth.png in Resources */ = {isa = PBXBuildFile; fileRef = 19F5205022F2C35200083D43 /* LineStyle-ItemWidth.png */; };
+		19F5205522F2C35800083D43 /* LineStyle.png in Resources */ = {isa = PBXBuildFile; fileRef = 19F5205122F2C35300083D43 /* LineStyle.png */; };
+		19F5205622F2C35800083D43 /* defaultStyle-ItemWidth.png in Resources */ = {isa = PBXBuildFile; fileRef = 19F5205222F2C35400083D43 /* defaultStyle-ItemWidth.png */; };
+		19F5205722F2C35800083D43 /* defaultStyle.png in Resources */ = {isa = PBXBuildFile; fileRef = 19F5205322F2C35500083D43 /* defaultStyle.png */; };
 		73ECB6368BA9E2C4D952D8B7 /* libPods-ACScrollMenuView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 327D42C4410E6ECABF0A1C48 /* libPods-ACScrollMenuView.a */; };
 		FA002D5320EC687900D0077A /* ACAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA002D5220EC687900D0077A /* ACAppDelegate.m */; };
 		FA002D5620EC687900D0077A /* ACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA002D5520EC687900D0077A /* ACViewController.m */; };
@@ -19,11 +23,13 @@
 		FA002D7520EC719B00D0077A /* ACScrollMenuCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA002D7420EC719B00D0077A /* ACScrollMenuCollectionCell.m */; };
 		FA002D7920EC780500D0077A /* UIColor+ACAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FA002D7820EC780500D0077A /* UIColor+ACAdd.m */; };
 		FA002D7C20EC981E00D0077A /* ACScrollMenuConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FA002D7B20EC981E00D0077A /* ACScrollMenuConfig.m */; };
-		FA002D8420ECD7E000D0077A /* defaultStyle.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FA002D8220ECD7E000D0077A /* defaultStyle.jpeg */; };
-		FA002D8520ECD7E000D0077A /* LineStyle.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FA002D8320ECD7E000D0077A /* LineStyle.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19F5205022F2C35200083D43 /* LineStyle-ItemWidth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LineStyle-ItemWidth.png"; sourceTree = "<group>"; };
+		19F5205122F2C35300083D43 /* LineStyle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LineStyle.png; sourceTree = "<group>"; };
+		19F5205222F2C35400083D43 /* defaultStyle-ItemWidth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "defaultStyle-ItemWidth.png"; sourceTree = "<group>"; };
+		19F5205322F2C35500083D43 /* defaultStyle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultStyle.png; sourceTree = "<group>"; };
 		327D42C4410E6ECABF0A1C48 /* libPods-ACScrollMenuView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ACScrollMenuView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F401FFF3756454687D9FD8D /* Pods-ACScrollMenuView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACScrollMenuView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ACScrollMenuView/Pods-ACScrollMenuView.debug.xcconfig"; sourceTree = "<group>"; };
 		AFA1E61D447D8BF889968E2D /* Pods-ACScrollMenuView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACScrollMenuView.release.xcconfig"; path = "Pods/Target Support Files/Pods-ACScrollMenuView/Pods-ACScrollMenuView.release.xcconfig"; sourceTree = "<group>"; };
@@ -48,8 +54,6 @@
 		FA002D7820EC780500D0077A /* UIColor+ACAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ACAdd.m"; sourceTree = "<group>"; };
 		FA002D7A20EC981E00D0077A /* ACScrollMenuConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACScrollMenuConfig.h; sourceTree = "<group>"; };
 		FA002D7B20EC981E00D0077A /* ACScrollMenuConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACScrollMenuConfig.m; sourceTree = "<group>"; };
-		FA002D8220ECD7E000D0077A /* defaultStyle.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = defaultStyle.jpeg; sourceTree = "<group>"; };
-		FA002D8320ECD7E000D0077A /* LineStyle.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LineStyle.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +150,10 @@
 		FA002D7D20ECD67B00D0077A /* ReadMeShowPicture */ = {
 			isa = PBXGroup;
 			children = (
-				FA002D8220ECD7E000D0077A /* defaultStyle.jpeg */,
-				FA002D8320ECD7E000D0077A /* LineStyle.jpeg */,
+				19F5205222F2C35400083D43 /* defaultStyle-ItemWidth.png */,
+				19F5205322F2C35500083D43 /* defaultStyle.png */,
+				19F5205022F2C35200083D43 /* LineStyle-ItemWidth.png */,
+				19F5205122F2C35300083D43 /* LineStyle.png */,
 			);
 			path = ReadMeShowPicture;
 			sourceTree = "<group>";
@@ -211,10 +217,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA002D5E20EC687A00D0077A /* LaunchScreen.storyboard in Resources */,
+				19F5205622F2C35800083D43 /* defaultStyle-ItemWidth.png in Resources */,
+				19F5205522F2C35800083D43 /* LineStyle.png in Resources */,
 				FA002D5B20EC687A00D0077A /* Assets.xcassets in Resources */,
+				19F5205722F2C35800083D43 /* defaultStyle.png in Resources */,
 				FA002D5920EC687900D0077A /* Main.storyboard in Resources */,
-				FA002D8520ECD7E000D0077A /* LineStyle.jpeg in Resources */,
-				FA002D8420ECD7E000D0077A /* defaultStyle.jpeg in Resources */,
+				19F5205422F2C35800083D43 /* LineStyle-ItemWidth.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 63S88Z2GR6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ACScrollMenuView/OtherInfo/ACScrollMenuPrefixHeader.h";
 				INFOPLIST_FILE = "$(SRCROOT)/ACScrollMenuView/OtherInfo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -413,6 +422,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 63S88Z2GR6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ACScrollMenuView/OtherInfo/ACScrollMenuPrefixHeader.h";
 				INFOPLIST_FILE = "$(SRCROOT)/ACScrollMenuView/OtherInfo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

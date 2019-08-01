@@ -10,7 +10,7 @@
 #import "UIColor+ACAdd.h"
 #import "ACScrollMenuConfig.h"
 
-#define ACNormalTextFont [UIFont systemFontOfSize:10]
+#define ACNormalTextFont [UIFont systemFontOfSize:15]
 #define ACNormalBGColor [UIColor AC_colorWithHexString:@"#FFFFFF"]
 #define ACSelectedBGColor [UIColor AC_colorWithHexString:@"#FF7D35"]
 #define ACNormalTextColor [UIColor AC_colorWithHexString:@"#BBBBBB"]
@@ -96,6 +96,9 @@ static ACScrollMenuConfig *scrollMenuConfigManager = nil;
 
 - (NSNumber *)menuTitleWidth
 {
+    if (scrollMenuConfigManager.itemWidth != nil) {
+        return scrollMenuConfigManager.itemWidth;
+    }
     if (self.isSelected && (scrollMenuConfig.scrollMenuStyle & ACScrollMenuItemStyleBottomLine))
     {
         return self.menuTitleSelectWidth;

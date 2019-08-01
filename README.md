@@ -1,8 +1,13 @@
 # ACScrollMenuView
-一个简单的滚动菜单效果、接入简单使用方便、支持多种样式、支持自定义样式；后期遇到不错的UI样式会持续更新。
+一个简单的滚动菜单(ScrollMenuView)效果、接入简单使用方便、支持多种样式、支持自定义样式；后期遇到不错的UI样式会持续更新。
 
 ![image](https://github.com/AlexCorleone/ACScrollMenuView/blob/master/ACScrollMenuView/OtherInfo/ReadMeShowPicture/LineStyle.png)
+
+![image](https://github.com/AlexCorleone/ACScrollMenuView/blob/master/ACScrollMenuView/OtherInfo/ReadMeShowPicture/LineStyle-ItemWidth.png)
+
 ![image](https://github.com/AlexCorleone/ACScrollMenuView/blob/master/ACScrollMenuView/OtherInfo/ReadMeShowPicture/defaultStyle.png)
+
+![image](https://github.com/AlexCorleone/ACScrollMenuView/blob/master/ACScrollMenuView/OtherInfo/ReadMeShowPicture/defaultStyle-ItemWidth.png)
 
 使用方法如下：
 
@@ -19,7 +24,7 @@
         }
         return _scrollMenuView;
     }
-    
+
 将ACScrollMenuView对象添加到视图层级
 
     [self.view addSubview:self.scrollMenuView];
@@ -28,11 +33,11 @@
            make.top.equalTo(self.view).offset(20);
            make.height.equalTo(@(30));
         }];
-        
+
 设置初始化选中的index 
 
     [_scrollMenuView setSelectIndex:1];
-    
+
 设置数据源(数据源可以继承ACScrollMenuItem实现自定义数据源)
 
     NSArray *menuTitleArray = @[@"简友圈", @"作者", @"专题", @"连载", @"文集", @"推送更新", @"全部关注"];
