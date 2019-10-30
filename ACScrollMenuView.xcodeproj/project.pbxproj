@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19840BC623697A2900C4A2FE /* ACSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 19840BC523697A2900C4A2FE /* ACSlider.m */; };
+		19840BC923697B6E00C4A2FE /* 按钮@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19840BC723697B6D00C4A2FE /* 按钮@3x.png */; };
+		19840BCA23697B6E00C4A2FE /* 按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19840BC823697B6E00C4A2FE /* 按钮@2x.png */; };
 		19F5205422F2C35800083D43 /* LineStyle-ItemWidth.png in Resources */ = {isa = PBXBuildFile; fileRef = 19F5205022F2C35200083D43 /* LineStyle-ItemWidth.png */; };
 		19F5205522F2C35800083D43 /* LineStyle.png in Resources */ = {isa = PBXBuildFile; fileRef = 19F5205122F2C35300083D43 /* LineStyle.png */; };
 		19F5205622F2C35800083D43 /* defaultStyle-ItemWidth.png in Resources */ = {isa = PBXBuildFile; fileRef = 19F5205222F2C35400083D43 /* defaultStyle-ItemWidth.png */; };
@@ -26,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19840BC423697A2900C4A2FE /* ACSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSlider.h; sourceTree = "<group>"; };
+		19840BC523697A2900C4A2FE /* ACSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACSlider.m; sourceTree = "<group>"; };
+		19840BC723697B6D00C4A2FE /* 按钮@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "按钮@3x.png"; sourceTree = "<group>"; };
+		19840BC823697B6E00C4A2FE /* 按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "按钮@2x.png"; sourceTree = "<group>"; };
 		19F5205022F2C35200083D43 /* LineStyle-ItemWidth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LineStyle-ItemWidth.png"; sourceTree = "<group>"; };
 		19F5205122F2C35300083D43 /* LineStyle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LineStyle.png; sourceTree = "<group>"; };
 		19F5205222F2C35400083D43 /* defaultStyle-ItemWidth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "defaultStyle-ItemWidth.png"; sourceTree = "<group>"; };
@@ -68,6 +75,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19840BC3236979E800C4A2FE /* ACSlider */ = {
+			isa = PBXGroup;
+			children = (
+				19840BC423697A2900C4A2FE /* ACSlider.h */,
+				19840BC523697A2900C4A2FE /* ACSlider.m */,
+				19840BC823697B6E00C4A2FE /* 按钮@2x.png */,
+				19840BC723697B6D00C4A2FE /* 按钮@3x.png */,
+			);
+			path = ACSlider;
+			sourceTree = "<group>";
+		};
+		19840BCB23697D4C00C4A2FE /* ACTest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ACTest;
+			sourceTree = "<group>";
+		};
 		D5EB94F7EB7D1044ABB670FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				FA002D7120EC6E0A00D0077A /* OtherInfo */,
+				19840BC3236979E800C4A2FE /* ACSlider */,
 				FA002D6720EC68AE00D0077A /* ACScrollMenuView */,
 			);
 			path = ACScrollMenuView;
@@ -132,6 +158,7 @@
 		FA002D7120EC6E0A00D0077A /* OtherInfo */ = {
 			isa = PBXGroup;
 			children = (
+				19840BCB23697D4C00C4A2FE /* ACTest */,
 				FA002D5F20EC687A00D0077A /* Info.plist */,
 				FA002D6020EC687A00D0077A /* main.m */,
 				FA002D5120EC687900D0077A /* ACAppDelegate.h */,
@@ -222,6 +249,8 @@
 				FA002D5B20EC687A00D0077A /* Assets.xcassets in Resources */,
 				19F5205722F2C35800083D43 /* defaultStyle.png in Resources */,
 				FA002D5920EC687900D0077A /* Main.storyboard in Resources */,
+				19840BCA23697B6E00C4A2FE /* 按钮@2x.png in Resources */,
+				19840BC923697B6E00C4A2FE /* 按钮@3x.png in Resources */,
 				19F5205422F2C35800083D43 /* LineStyle-ItemWidth.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +291,7 @@
 				FA002D7520EC719B00D0077A /* ACScrollMenuCollectionCell.m in Sources */,
 				FA002D7C20EC981E00D0077A /* ACScrollMenuConfig.m in Sources */,
 				FA002D7920EC780500D0077A /* UIColor+ACAdd.m in Sources */,
+				19840BC623697A2900C4A2FE /* ACSlider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

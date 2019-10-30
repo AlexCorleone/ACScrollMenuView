@@ -1,5 +1,3 @@
-# ACScrollMenuView
-一个简单的滚动菜单(ScrollMenuView)效果、接入简单使用方便、支持多种样式、支持自定义样式；后期遇到不错的UI样式会持续更新。
 
 ![image](https://github.com/AlexCorleone/ACScrollMenuView/blob/master/ACScrollMenuView/OtherInfo/ReadMeShowPicture/LineStyle.png)
 
@@ -8,6 +6,9 @@
 ![image](https://github.com/AlexCorleone/ACScrollMenuView/blob/master/ACScrollMenuView/OtherInfo/ReadMeShowPicture/defaultStyle.png)
 
 ![image](https://github.com/AlexCorleone/ACScrollMenuView/blob/master/ACScrollMenuView/OtherInfo/ReadMeShowPicture/defaultStyle-ItemWidth.png)
+
+# ACScrollMenuView
+一个简单的滚动菜单(ScrollMenuView)效果、接入简单使用方便、支持多种样式、支持自定义样式；后期遇到不错的UI样式会持续更新。
 
 使用方法如下：
 
@@ -56,6 +57,27 @@
     [_scrollMenuView setDidSelectMenuItemBlock:^(ACScrollMenuItem *selectItem, NSInteger selectIndex) {
         NSLog(@"%@ ----- %ld", selectItem.menuTitle, selectIndex);
     }];
+
+# ACSlider
+
+一个简单的自定义进度控制条(`ACSlider`)在系统UISlider的基础上增加了自定义Bar的高度、实现渐变色进度展示。
+
+```
+    ACSlider *slider = [[ACSlider alloc] initWithFrame:CGRectMake(30, 120, 250, 40)];
+    [slider setThumbImage:[UIImage imageNamed:@"按钮"] forState:UIControlStateNormal];
+    slider.backgroundColor = UIColor.clearColor;
+    [slider setValue:5 animated:YES];
+    slider.maximumValue = 10.0;
+    slider.minimumValue = 0.0;
+    slider.barHeight = 11.0;//设置Bar的高度
+    slider.barColors = @[(id)[UIColor redColor].CGColor,
+                         (id)[UIColor purpleColor].CGColor];//设置进度渐变色展示
+    slider.barBackgroundColor = [UIColor whiteColor];//设置Bar的底色
+    [slider addTarget:self
+               action:@selector(sliderDidChangeWith:)
+     forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:slider];
+```
 
 
 😍记得点个Start哦！！！
