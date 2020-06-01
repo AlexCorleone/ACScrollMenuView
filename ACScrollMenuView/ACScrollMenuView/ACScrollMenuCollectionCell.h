@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class ACScrollMenuItem;
+
+
 @interface ACScrollMenuCollectionCell : UICollectionViewCell
 
 @property (nonatomic, strong) UILabel *menuTitleLabel;
-@property (nonatomic, strong) UIView  *lineView;
+@property (nonatomic, strong) UIView *lineView;
 
 @property (nonatomic, strong) ACScrollMenuItem *cellModel;
 

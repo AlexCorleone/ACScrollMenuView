@@ -11,6 +11,7 @@
 
 #define kBarLeftSpace (5.0)
 
+
 @interface ACSlider ()
 
 /** <#注释#> */
@@ -26,9 +27,11 @@
 
 @end
 
+
 @implementation ACSlider
 
-- (void)drawRect:(CGRect)rect {
+- (void)drawRect:(CGRect)rect
+{
     // Drawing code
     if (!_isCustomBarHeight) {
         _barHeight = CGRectGetHeight(rect) * 0.5;
@@ -36,28 +39,30 @@
     self.layer.sublayers[0].hidden = YES;
     self.layer.sublayers[1].hidden = YES;
     self.barWidth = CGRectGetWidth(rect) - kBarLeftSpace * 2.0;
-    
+
     [self.layer insertSublayer:self.contentLayer_ atIndex:2];
     [self.layer insertSublayer:self.backgroundLayer_ above:self.contentLayer_];
     [self.layer insertSublayer:self.progressLayer_ above:self.backgroundLayer_];
 }
 
-- (CGRect)thumbRectForBounds:(CGRect)bounds trackRect:(CGRect)rect value:(float)value {
+- (CGRect)thumbRectForBounds:(CGRect)bounds trackRect:(CGRect)rect value:(float)value
+{
     dispatch_async(dispatch_get_main_queue(), ^{
         [self setNeedsDisplay];
     });
     return [super thumbRectForBounds:bounds trackRect:rect value:value];
-
 }
 
 #pragma mark - Setter && Getter
 
-- (void)setBarHeight:(CGFloat)barHeight {
-   _barHeight = barHeight > CGRectGetHeight(self.frame) ? CGRectGetHeight(self.frame) : barHeight;
+- (void)setBarHeight:(CGFloat)barHeight
+{
+    _barHeight = barHeight > CGRectGetHeight(self.frame) ? CGRectGetHeight(self.frame) : barHeight;
     self.isCustomBarHeight = YES;
 }
 
-- (CALayer *)contentLayer_ {
+- (CALayer *)contentLayer_
+{
     if (!_contentLayer_) {
         self.contentLayer_ = [[CALayer alloc] init];
         _contentLayer_.frame = self.bounds;
@@ -66,7 +71,8 @@
     return _contentLayer_;
 }
 
-- (CAGradientLayer *)backgroundLayer_ {
+- (CAGradientLayer *)backgroundLayer_
+{
     if (!_backgroundLayer_) {
         self.backgroundLayer_ = [[CAGradientLayer alloc] init];
         _backgroundLayer_.frame = CGRectMake(kBarLeftSpace, (CGRectGetHeight(self.bounds) - self.barHeight) / 2.0, self.barWidth, self.barHeight);
@@ -80,7 +86,8 @@
     return _backgroundLayer_;
 }
 
-- (CAGradientLayer *)progressLayer_ {
+- (CAGradientLayer *)progressLayer_
+{
     if (!_progressLayer_) {
         self.progressLayer_ = [[CAGradientLayer alloc] init];
         _progressLayer_.startPoint = CGPointMake(0, 0.5);
@@ -89,8 +96,8 @@
         if (self.barColors) {
             self.progressLayer_.colors = self.barColors;
         } else {
-            self.progressLayer_.colors = @[(id)[UIColor AC_colorWithHexString:@"#FEDC41"].CGColor,
-                                           (id)[UIColor AC_colorWithHexString:@"#F4658E"].CGColor];
+            self.progressLayer_.colors = @[ (id)[UIColor AC_colorWithHexString:@"#FEDC41"].CGColor,
+                                            (id)[UIColor AC_colorWithHexString:@"#F4658E"].CGColor ];
         }
     }
     _progressLayer_.frame = CGRectMake(CGRectGetMinX(self.backgroundLayer_.frame), CGRectGetMinY(self.backgroundLayer_.frame), self.barWidth * ((self.value - self.minimumValue) / (self.maximumValue - self.minimumValue)), self.barHeight);

@@ -9,19 +9,20 @@
 #import "ACScrollMenuView.h"
 #import "ACScrollMenuCollectionView.h"
 
+
 @interface ACScrollMenuView ()
 
-@property (nonatomic, strong) ACScrollMenuCollectionView  *scrollMenuCollectionView;
+@property (nonatomic, strong) ACScrollMenuCollectionView *scrollMenuCollectionView;
 
 @end
+
 
 @implementation ACScrollMenuView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self)
-    {
+    if (self) {
         _selectIndex = -1;
         self.backgroundColor = UIColor.whiteColor;
         [self configACScrollMenuSubviews];
@@ -33,47 +34,41 @@
 - (void)setMenuDataSourceArray:(NSArray<ACScrollMenuItem *> *)menuDataSourceArray
 {
     _menuDataSourceArray = menuDataSourceArray.copy;
-    if (self.selectIndex == -1)
-    {
-//        self.selectIndex = 0;
+    if (self.selectIndex == -1) {
+        //        self.selectIndex = 0;
         [self.scrollMenuCollectionView reloadData];
-    }else if (_menuDataSourceArray.count > _selectIndex && _selectIndex >= 0)
-    {
+    } else if (_menuDataSourceArray.count > _selectIndex && _selectIndex >= 0) {
         ACScrollMenuItem *itemModel = _menuDataSourceArray[_selectIndex];
         itemModel.isSelected = YES;
         [self layoutIfNeeded];
         [self.scrollMenuCollectionView reloadData];
-    }else
-    {
+    } else {
         [self.scrollMenuCollectionView reloadData];
     }
 }
 
 - (void)setSelectIndex:(NSUInteger)selectIndex
 {
-    if (_menuDataSourceArray.count > _selectIndex && _selectIndex >= 0)
-    {
+    if (_menuDataSourceArray.count > _selectIndex && _selectIndex >= 0) {
         ACScrollMenuItem *itemModel = _menuDataSourceArray[_selectIndex];
         itemModel.isSelected = NO;
-    }    _selectIndex = selectIndex;
-    if (_menuDataSourceArray.count > _selectIndex && _selectIndex >= 0)
-    {
+    }
+    _selectIndex = selectIndex;
+    if (_menuDataSourceArray.count > _selectIndex && _selectIndex >= 0) {
         ACScrollMenuItem *itemModel = _menuDataSourceArray[_selectIndex];
         itemModel.isSelected = YES;
         [self layoutIfNeeded];
         [self.scrollMenuCollectionView reloadData];
-    }else
-    {
+    } else {
         [self.scrollMenuCollectionView reloadData];
     }
 }
 
 - (ACScrollMenuCollectionView *)scrollMenuCollectionView
 {
-    if (!_scrollMenuCollectionView)
-    {
+    if (!_scrollMenuCollectionView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        layout.scrollDirection =  UICollectionViewScrollDirectionHorizontal;
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         self.scrollMenuCollectionView = [[ACScrollMenuCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _scrollMenuCollectionView.showsHorizontalScrollIndicator = NO;
         _scrollMenuCollectionView.showsVerticalScrollIndicator = NO;

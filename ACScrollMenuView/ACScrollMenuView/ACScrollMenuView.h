@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "ACScrollMenuConfig.h"
 
+
 @interface ACScrollMenuView : UIView
 
 @property (nonatomic, assign) NSUInteger selectIndex;
-@property (nonatomic, copy) NSArray <ACScrollMenuItem *> *menuDataSourceArray;
-@property (nonatomic, copy) void(^didSelectMenuItemBlock)(ACScrollMenuItem *selectItem, NSInteger selectIndex);
+@property (nonatomic, copy) NSArray<ACScrollMenuItem *> *menuDataSourceArray;
+@property (nonatomic, copy) void (^didSelectMenuItemBlock)(ACScrollMenuItem *selectItem, NSInteger selectIndex);
 
 @end

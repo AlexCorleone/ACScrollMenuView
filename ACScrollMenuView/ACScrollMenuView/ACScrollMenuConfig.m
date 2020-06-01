@@ -21,15 +21,15 @@
 
 static ACScrollMenuConfig *scrollMenuConfigManager = nil;
 
+
 @implementation ACScrollMenuConfig
 
 + (ACScrollMenuConfig *)getDefaultConfig
 {
-    if (!scrollMenuConfigManager)
-    {
+    if (!scrollMenuConfigManager) {
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
-            
+
             scrollMenuConfigManager = [ACScrollMenuConfig new];
             scrollMenuConfigManager.menuTitleFont = ACNormalTextFont;
             scrollMenuConfigManager.itemInsetForSection = 5;
@@ -43,7 +43,7 @@ static ACScrollMenuConfig *scrollMenuConfigManager = nil;
              */
             scrollMenuConfigManager.menuItemNormalBGColor = ACNormalBGColor;
             scrollMenuConfigManager.menuItemSelectedBGColor = ACSelectedBGColor;
-            
+
             scrollMenuConfigManager.menuNormalBorderLineColor = ACNormalBorderLineColor;
             scrollMenuConfigManager.menuSelectedBorderLineColor = ACSelectedBorderLineColor;
             /*
@@ -58,6 +58,7 @@ static ACScrollMenuConfig *scrollMenuConfigManager = nil;
 
 @end
 
+
 @interface ACScrollMenuItem ()
 /*选中文字长度*/
 @property (nonatomic, strong) NSNumber *menuTitleSelectWidth;
@@ -67,31 +68,33 @@ static ACScrollMenuConfig *scrollMenuConfigManager = nil;
 
 @end
 
+
 @implementation ACScrollMenuItem
 
 - (NSNumber *)menuTitleNormalWidth
 {
-    if (!_menuTitleNormalWidth)
-    {
+    if (!_menuTitleNormalWidth) {
         _menuTitleNormalWidth = @([self.menuTitle boundingRectWithSize:CGSizeMake(MAXFLOAT, 30)
                                                                options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-                                                            attributes:@{NSFontAttributeName:scrollMenuConfig.menuTitleFont}
-                                                               context:nil].size.width + 20);
+                                                            attributes:@{ NSFontAttributeName : scrollMenuConfig.menuTitleFont }
+                                                               context:nil]
+                                      .size.width +
+                                  20);
     }
     return _menuTitleNormalWidth;
 }
 
 - (NSNumber *)menuTitleSelectWidth
 {
-    if (!_menuTitleSelectWidth)
-    {
+    if (!_menuTitleSelectWidth) {
         _menuTitleSelectWidth = @([self.menuTitle boundingRectWithSize:CGSizeMake(MAXFLOAT, 30)
                                                                options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-                                                            attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:scrollMenuConfig.menuTitleFont.pointSize + selectedFoneReuce]}
-                                                               context:nil].size.width + 20);
+                                                            attributes:@{ NSFontAttributeName : [UIFont systemFontOfSize:scrollMenuConfig.menuTitleFont.pointSize + selectedFoneReuce] }
+                                                               context:nil]
+                                      .size.width +
+                                  20);
     }
     return _menuTitleSelectWidth;
-    
 }
 
 - (NSNumber *)menuTitleWidth
@@ -99,14 +102,11 @@ static ACScrollMenuConfig *scrollMenuConfigManager = nil;
     if (scrollMenuConfigManager.itemWidth != nil) {
         return scrollMenuConfigManager.itemWidth;
     }
-    if (self.isSelected && (scrollMenuConfig.scrollMenuStyle & ACScrollMenuItemStyleBottomLine))
-    {
+    if (self.isSelected && (scrollMenuConfig.scrollMenuStyle & ACScrollMenuItemStyleBottomLine)) {
         return self.menuTitleSelectWidth;
-    }else
-    {
+    } else {
         return self.menuTitleNormalWidth;
     }
 }
 
 @end
-

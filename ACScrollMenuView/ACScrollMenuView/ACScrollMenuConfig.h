@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSUInteger, ACScrollMenuItemStyle) {
-    ACScrollMenuItemStyleDefault = 1 << 0 ,//背景色和边线
+    ACScrollMenuItemStyleDefault = 1 << 0,    //背景色和边线
     ACScrollMenuItemStyleBottomLine = 1 << 1, //底部下划线
 };
 
 #define scrollMenuConfig [ACScrollMenuConfig getDefaultConfig]
+
+
 @interface ACScrollMenuConfig : NSObject
 
 @property (nonatomic, assign) ACScrollMenuItemStyle scrollMenuStyle;
@@ -31,7 +33,7 @@ typedef NS_ENUM(NSUInteger, ACScrollMenuItemStyle) {
 /*
  * Item的文字字体
  */
-@property (nonatomic, strong) UIFont  *menuTitleFont;
+@property (nonatomic, strong) UIFont *menuTitleFont;
 
 /*
  * Item的文字的默认颜色
@@ -89,13 +91,14 @@ typedef NS_ENUM(NSUInteger, ACScrollMenuItemStyle) {
 
 
 #define selectedFoneReuce (1.5)
+
+
 @interface ACScrollMenuItem : NSObject
 
 @property (nonatomic, strong) NSNumber *ID;
-@property (nonatomic, copy)  NSString *menuTitle;
-@property (nonatomic, assign)  BOOL isSelected;
+@property (nonatomic, copy) NSString *menuTitle;
+@property (nonatomic, assign) BOOL isSelected;
 /*文字长度*/
 @property (nonatomic, strong) NSNumber *menuTitleWidth;
 
 @end
-

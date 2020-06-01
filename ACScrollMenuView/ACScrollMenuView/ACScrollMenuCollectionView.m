@@ -11,13 +11,14 @@
 #import "ACScrollMenuCollectionCell.h"
 #import "ACScrollMenuConfig.h"
 
-@interface ACScrollMenuCollectionView ()
-<UICollectionViewDelegate,
- UICollectionViewDataSource,
- UICollectionViewDelegateFlowLayout>
+
+@interface ACScrollMenuCollectionView () <UICollectionViewDelegate,
+                                          UICollectionViewDataSource,
+                                          UICollectionViewDelegateFlowLayout>
 
 
 @end
+
 
 @implementation ACScrollMenuCollectionView
 
@@ -28,52 +29,51 @@ static NSString *scrollMenuEmptyHeaderIdentifier = @"Alex.ScrollMenuEmptyHeaderI
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout
 {
     self = [super initWithFrame:frame collectionViewLayout:layout];
-    if (self)
-    {
+    if (self) {
         self.backgroundColor = UIColor.whiteColor;
         self.delegate = self;
         self.dataSource = self;
         [self registerClass:ACScrollMenuCollectionCell.class forCellWithReuseIdentifier:scrollMenuCellIdentifier];
         [self registerClass:UICollectionReusableView.class
- forSupplementaryViewOfKind:UICollectionElementKindSectionFooter
-        withReuseIdentifier:scrollMenuEmptyFooterIdentifier];
+            forSupplementaryViewOfKind:UICollectionElementKindSectionFooter
+                   withReuseIdentifier:scrollMenuEmptyFooterIdentifier];
         [self registerClass:UICollectionReusableView.class
- forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
-        withReuseIdentifier:scrollMenuEmptyHeaderIdentifier];
+            forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                   withReuseIdentifier:scrollMenuEmptyHeaderIdentifier];
     }
     return self;
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ACScrollMenuItem *cellModel = self.scrollMenuDelegate.menuDataSourceArray[indexPath.row];
     CGFloat insetValue = scrollMenuConfig.itemInsetForSection;
     return CGSizeMake(cellModel.menuTitleWidth.floatValue, self.bounds.size.height - insetValue * 2.);
 }
 
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
     CGFloat insetValue = scrollMenuConfig.itemInsetForSection;
     return UIEdgeInsetsMake(insetValue, 10, insetValue, 10);
 }
 
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
     return scrollMenuConfig.itemMiddleMargin;
 }
 
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
     return scrollMenuConfig.itemMiddleMargin;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
     return CGSizeMake(0.00001, 0.000001);
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
 {
     return CGSizeMake(0.00001, 0.000001);
 }
@@ -82,17 +82,15 @@ static NSString *scrollMenuEmptyHeaderIdentifier = @"Alex.ScrollMenuEmptyHeaderI
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
-    if (self.scrollMenuDelegate.selectIndex == indexPath.row)
-    {//点击同一个MenuItem不做处理
+    if (self.scrollMenuDelegate.selectIndex == indexPath.row) { //点击同一个MenuItem不做处理
         return;
     }
-//    ACScrollMenuCollectionCell *beforCell = (ACScrollMenuCollectionCell *)[collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:self.scrollMenuDelegate.selectIndex inSection:0]];
-//    ACScrollMenuCollectionCell *afterCell = (ACScrollMenuCollectionCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    //    ACScrollMenuCollectionCell *beforCell = (ACScrollMenuCollectionCell *)[collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:self.scrollMenuDelegate.selectIndex inSection:0]];
+    //    ACScrollMenuCollectionCell *afterCell = (ACScrollMenuCollectionCell *)[collectionView cellForItemAtIndexPath:indexPath];
     [self selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
     [self.scrollMenuDelegate setSelectIndex:indexPath.row];
     ACScrollMenuItem *selectMenuItem = self.scrollMenuDelegate.menuDataSourceArray[indexPath.row];
-    if (self.scrollMenuDelegate.didSelectMenuItemBlock)
-    {
+    if (self.scrollMenuDelegate.didSelectMenuItemBlock) {
         self.scrollMenuDelegate.didSelectMenuItemBlock(selectMenuItem, indexPath.row);
     }
 }
@@ -103,11 +101,10 @@ static NSString *scrollMenuEmptyHeaderIdentifier = @"Alex.ScrollMenuEmptyHeaderI
     return self.scrollMenuDelegate.menuDataSourceArray.count;
 }
 
-- ( UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ACScrollMenuCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:scrollMenuCellIdentifier forIndexPath:indexPath];
-    if (self.scrollMenuDelegate.menuDataSourceArray.count > indexPath.row)
-    {
+    if (self.scrollMenuDelegate.menuDataSourceArray.count > indexPath.row) {
         ACScrollMenuItem *cellModel = self.scrollMenuDelegate.menuDataSourceArray[indexPath.row];
         [cell setCellModel:cellModel];
     }
@@ -116,14 +113,12 @@ static NSString *scrollMenuEmptyHeaderIdentifier = @"Alex.ScrollMenuEmptyHeaderI
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    if ([kind isEqualToString:UICollectionElementKindSectionFooter])
-    {
+    if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
         UICollectionReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:scrollMenuEmptyFooterIdentifier forIndexPath:indexPath];
         return footerView;
     }
     UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:scrollMenuEmptyHeaderIdentifier forIndexPath:indexPath];
     return headerView;
-
 }
 
 

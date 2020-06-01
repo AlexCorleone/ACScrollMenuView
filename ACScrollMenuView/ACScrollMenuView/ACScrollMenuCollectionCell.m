@@ -9,18 +9,19 @@
 #import "ACScrollMenuCollectionCell.h"
 #import "ACScrollMenuConfig.h"
 
+
 @interface ACScrollMenuCollectionCell ()
 
 
 @end
+
 
 @implementation ACScrollMenuCollectionCell
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self)
-    {
+    if (self) {
         self.backgroundColor = UIColor.clearColor;
         [self configScrollMenuCellSubviews];
     }
@@ -30,8 +31,7 @@
 #pragma mark - setter && getter
 - (UILabel *)menuTitleLabel
 {
-    if (!_menuTitleLabel)
-    {
+    if (!_menuTitleLabel) {
         _menuTitleLabel = [UILabel new];
         [_menuTitleLabel setTextColor:scrollMenuConfig.menuTitleNormalColor];
         [_menuTitleLabel setFont:scrollMenuConfig.menuTitleFont];
@@ -43,8 +43,7 @@
 
 - (UIView *)lineView
 {
-    if (!_lineView)
-    {
+    if (!_lineView) {
         self.lineView = [UIView new];
         _lineView.backgroundColor = scrollMenuConfig.menuNormalBorderLineColor;
     }
@@ -56,23 +55,19 @@
     _cellModel = cellModel;
     _menuTitleLabel.text = _cellModel.menuTitle;
     _menuTitleLabel.textColor = _cellModel.isSelected ? scrollMenuConfig.menuTitleSelectedColor : scrollMenuConfig.menuTitleNormalColor;
-    if (scrollMenuConfig.scrollMenuStyle & ACScrollMenuItemStyleDefault)
-    {
+    if (scrollMenuConfig.scrollMenuStyle & ACScrollMenuItemStyleDefault) {
         self.backgroundColor = _cellModel.isSelected ? scrollMenuConfig.menuItemSelectedBGColor : scrollMenuConfig.menuItemNormalBGColor;
         self.layer.borderColor = _cellModel.isSelected ? scrollMenuConfig.menuSelectedBorderLineColor.CGColor : scrollMenuConfig.menuNormalBorderLineColor.CGColor;
-    }else if (scrollMenuConfig.scrollMenuStyle == ACScrollMenuItemStyleBottomLine)
-    {
+    } else if (scrollMenuConfig.scrollMenuStyle == ACScrollMenuItemStyleBottomLine) {
         self.lineView.backgroundColor = _cellModel.isSelected ? scrollMenuConfig.menuItemSelectedBottomLineColor : scrollMenuConfig.menuItemNormalBottomLineColor;
         [UIView animateWithDuration:0.4 animations:^{
-            if (self.cellModel.isSelected)
-            {
+            if (self.cellModel.isSelected) {
                 self.menuTitleLabel.font = [UIFont systemFontOfSize:scrollMenuConfig.menuTitleFont.pointSize + selectedFoneReuce];
-            }else
-            {
+            } else {
                 self.menuTitleLabel.font = scrollMenuConfig.menuTitleFont;
             }
-        } completion:^(BOOL finished) {
-            
+        } completion:^(BOOL finished){
+
         }];
     }
 }
@@ -84,13 +79,11 @@
         make.centerX.centerY.equalTo(self);
         make.width.height.equalTo(self).offset(-10);
     }];
-    if (scrollMenuConfig.scrollMenuStyle & ACScrollMenuItemStyleDefault)
-    {
+    if (scrollMenuConfig.scrollMenuStyle & ACScrollMenuItemStyleDefault) {
         [self.layer setBorderWidth:0.7];
         [self.layer setCornerRadius:self.bounds.size.height / 2.];
         [self.layer setBorderColor:scrollMenuConfig.menuNormalBorderLineColor.CGColor];
-    }else if (scrollMenuConfig.scrollMenuStyle == ACScrollMenuItemStyleBottomLine)
-    {
+    } else if (scrollMenuConfig.scrollMenuStyle == ACScrollMenuItemStyleBottomLine) {
         [self addSubview:self.lineView];
         [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.menuTitleLabel);
